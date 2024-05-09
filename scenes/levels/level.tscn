@@ -13,6 +13,10 @@ position = Vector2(549, -593)
 [node name="Player" parent="." instance=ExtResource("4_5vvfq")]
 position = Vector2(562, 573)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
+
 [node name="Projectiles" type="Node2D" parent="."]
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
