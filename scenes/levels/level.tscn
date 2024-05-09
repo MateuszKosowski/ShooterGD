@@ -1,11 +1,69 @@
-[gd_scene load_steps=4 format=3 uid="uid://clgcibnb5qxle"]
+[gd_scene load_steps=12 format=3 uid="uid://clgcibnb5qxle"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_7rvds"]
+[ext_resource type="Texture2D" uid="uid://dbs8d2wpl73wu" path="res://graphics/ground/stones.png" id="2_b2gin"]
+[ext_resource type="Texture2D" uid="uid://dkaj6hhg5dkyq" path="res://graphics/decals/moss/moss_5.png" id="3_4a8n4"]
+[ext_resource type="Texture2D" uid="uid://d068kjuvvnsq7" path="res://graphics/decals/dirt_patch.png" id="3_6lcwh"]
 [ext_resource type="PackedScene" uid="uid://dxwub4gtk7th2" path="res://scenes/objects/gate.tscn" id="3_xdkxw"]
 [ext_resource type="PackedScene" uid="uid://57gpp41dm2lh" path="res://scenes/player/player.tscn" id="4_5vvfq"]
+[ext_resource type="Texture2D" uid="uid://bcq0fc4lfy1aq" path="res://graphics/decals/blood.png" id="4_ho18c"]
+[ext_resource type="Texture2D" uid="uid://dcuaoxywmmcqn" path="res://graphics/decals/moss/moss_4.png" id="4_unmyt"]
+[ext_resource type="Texture2D" uid="uid://ckqhlgdk50xup" path="res://graphics/decals/moss/moss_3.png" id="5_k73i8"]
+[ext_resource type="Texture2D" uid="uid://ufl8kwdi55s" path="res://graphics/decals/moss/moss_1.png" id="6_kknym"]
+[ext_resource type="Texture2D" uid="uid://bnsql6tq8ffmu" path="res://graphics/decals/moss/moss_2.png" id="7_l83mg"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_7rvds")
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="Soil" type="Sprite2D" parent="Ground"]
+texture_repeat = 2
+position = Vector2(547, 724)
+texture = ExtResource("2_b2gin")
+region_enabled = true
+region_rect = Rect2(-4785.26, -4126.22, 13443.2, 10526.7)
+
+[node name="Moss5" type="Sprite2D" parent="Ground"]
+position = Vector2(337, 1391)
+texture = ExtResource("3_4a8n4")
+
+[node name="Blood" type="Sprite2D" parent="Ground"]
+position = Vector2(480, 1088)
+texture = ExtResource("4_ho18c")
+
+[node name="Moss4" type="Sprite2D" parent="Ground"]
+position = Vector2(831, 1352)
+texture = ExtResource("4_unmyt")
+
+[node name="Moss3" type="Sprite2D" parent="Ground"]
+position = Vector2(1202, 1135)
+texture = ExtResource("5_k73i8")
+
+[node name="Moss1" type="Sprite2D" parent="Ground"]
+position = Vector2(1355, 391)
+texture = ExtResource("6_kknym")
+
+[node name="Moss8" type="Sprite2D" parent="Ground"]
+position = Vector2(1787, 606)
+texture = ExtResource("3_4a8n4")
+
+[node name="Moss7" type="Sprite2D" parent="Ground"]
+position = Vector2(-64, 325)
+texture = ExtResource("5_k73i8")
+
+[node name="Moss2" type="Sprite2D" parent="Ground"]
+position = Vector2(1589, 1279)
+texture = ExtResource("7_l83mg")
+
+[node name="Moss6" type="Sprite2D" parent="Ground"]
+position = Vector2(1635, 909)
+texture = ExtResource("7_l83mg")
+
+[node name="Decoration" type="Sprite2D" parent="Ground"]
+modulate = Color(0.886275, 0.827451, 0.603922, 1)
+position = Vector2(-326, 859)
+texture = ExtResource("3_6lcwh")
 
 [node name="Gate" parent="." instance=ExtResource("3_xdkxw")]
 position = Vector2(549, -593)
