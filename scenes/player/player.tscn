@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://57gpp41dm2lh"]
+[gd_scene load_steps=9 format=3 uid="uid://57gpp41dm2lh"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_4qr17"]
 [ext_resource type="Texture2D" uid="uid://b674avqruinxj" path="res://graphics/player/player.png" id="1_vws4h"]
@@ -23,6 +23,9 @@ scale_min = 0.3
 scale_max = 0.6
 color = Color(0.615686, 1, 1, 0.733333)
 color_ramp = SubResource("GradientTexture1D_sea2q")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ylb8r"]
+polygon = PackedVector2Array(7, -59, 14, -61, 20, -61, 26, -57, 30, -49, 32, -47, 39, -42, 40, -37, 42, -33, 45, -30, 50, -28, 58, -25, 65, -18, 71, -12, 77, -10, 81, -12, 86, -11, 91, -6, 98, -4, 106, -2, 108, 0, 114, 2, 120, 2, 121, 5, 126, 7, 130, 12, 130, 20, 128, 28, 126, 32, 121, 32, 119, 36, 114, 37, 109, 37, 106, 34, 101, 38, 98, 43, 92, 43, 92, 50, 90, 52, 58, 52, 55, 48, 56, 43, 59, 41, 53, 40, 43, 40, 34, 43, 25, 46, 17, 49, 7, 54, -2, 58, -11, 60, -21, 60, -31, 58, -39, 52, -41, 45, -46, 37, -49, 31, -55, 26, -56, 20, -53, 16, -60, 11, -63, 5, -64, -4, -64, -19, -61, -25, -57, -31, -56, -37, -51, -43, -45, -46, -39, -48, -33, -45, -31, -48, -31, -52, -26, -55, -18, -57, -15, -55, -11, -58, -6, -59, 1, -59)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
@@ -63,6 +66,9 @@ texture = ExtResource("3_a6imy")
 lifetime = 0.1
 one_shot = true
 
-[connection signal="timeout" from="LaserReloadTimer" to="." method="_on_timer_timeout"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_ylb8r")
+
 [connection signal="timeout" from="LaserReloadTimer" to="." method="_on_laser_reload_timer_timeout"]
+[connection signal="timeout" from="LaserReloadTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="GrenadeReloadTimer" to="." method="_on_grenade_reload_timer_timeout"]
