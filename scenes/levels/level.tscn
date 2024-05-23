@@ -315,6 +315,9 @@ texture = ExtResource("4_unmyt")
 position = Vector2(-2759, -33)
 texture = ExtResource("5_k73i8")
 
+[node name="SteamVent" parent="Ground" instance=ExtResource("13_hxicc")]
+position = Vector2(1476, 412)
+
 [node name="House" parent="Ground" instance=ExtResource("14_elcbp")]
 position = Vector2(1327, 3300)
 rotation = -2.87979
@@ -327,9 +330,6 @@ position = Vector2(-1072, 2468)
 [node name="Gate" parent="." instance=ExtResource("3_xdkxw")]
 position = Vector2(549, -593)
 metadata/_edit_lock_ = true
-
-[node name="SteamVent" parent="." instance=ExtResource("13_hxicc")]
-position = Vector2(1476, 412)
 
 [node name="Player" parent="." instance=ExtResource("4_5vvfq")]
 position = Vector2(562, 573)
