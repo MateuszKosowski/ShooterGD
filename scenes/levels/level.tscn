@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://clgcibnb5qxle"]
+[gd_scene load_steps=20 format=3 uid="uid://clgcibnb5qxle"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_7rvds"]
 [ext_resource type="Texture2D" uid="uid://dbs8d2wpl73wu" path="res://graphics/ground/stones.png" id="2_b2gin"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b3it0dai5hbjj" path="res://graphics/tilesets/outside_walls.png" id="10_qvpxh"]
 [ext_resource type="Texture2D" uid="uid://davkd13b354yy" path="res://graphics/tilesets/soil.png" id="11_lapl7"]
 [ext_resource type="PackedScene" uid="uid://cum3i5hig6dnn" path="res://scenes/objects/steam_vent.tscn" id="13_hxicc"]
+[ext_resource type="PackedScene" uid="uid://dsbs88u0oqtb4" path="res://scenes/objects/light_fan_animation.tscn" id="13_jji5h"]
 [ext_resource type="PackedScene" uid="uid://dgu887gc4gnbo" path="res://scenes/houses/house.tscn" id="14_elcbp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ivbln"]
@@ -314,16 +315,21 @@ texture = ExtResource("4_unmyt")
 position = Vector2(-2759, -33)
 texture = ExtResource("5_k73i8")
 
-[node name="Gate" parent="." instance=ExtResource("3_xdkxw")]
-position = Vector2(549, -593)
-
-[node name="SteamVent" parent="." instance=ExtResource("13_hxicc")]
-position = Vector2(1476, 412)
-
-[node name="House" parent="." instance=ExtResource("14_elcbp")]
+[node name="House" parent="Ground" instance=ExtResource("14_elcbp")]
 position = Vector2(1327, 3300)
 rotation = -2.87979
 scale = Vector2(1, 1)
+metadata/_edit_lock_ = true
+
+[node name="LightFanAnimation" parent="Ground" instance=ExtResource("13_jji5h")]
+position = Vector2(-1072, 2468)
+
+[node name="Gate" parent="." instance=ExtResource("3_xdkxw")]
+position = Vector2(549, -593)
+metadata/_edit_lock_ = true
+
+[node name="SteamVent" parent="." instance=ExtResource("13_hxicc")]
+position = Vector2(1476, 412)
 
 [node name="Player" parent="." instance=ExtResource("4_5vvfq")]
 position = Vector2(562, 573)
@@ -333,6 +339,7 @@ zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.347817, 0.347817, 0.347817, 1)
