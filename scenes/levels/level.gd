@@ -3,9 +3,9 @@ extends Node2D
 var laser_scane: PackedScene = preload("res://scenes/projectiles/laser.tscn")
 var grenade_scane: PackedScene = preload("res://scenes/projectiles/grenade.tscn")
 
-func _on_gate_player_entered_gate(body):
-	print("player has entered gate")
-	print(body)
+func _on_gate_player_entered_gate(_body):
+	var tween = create_tween()
+	tween.tween_property($Player, "speed", 0, 0.5)
 
 
 func _on_player_laser(pos, direction):

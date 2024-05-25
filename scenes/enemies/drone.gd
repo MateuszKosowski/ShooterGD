@@ -8,3 +8,6 @@ func _process(_delta):
 	#move and slide
 	move_and_slide()
 	
+func hit():
+	print('Take dmg...!')
+	
