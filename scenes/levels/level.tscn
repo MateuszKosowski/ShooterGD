@@ -321,7 +321,6 @@ position = Vector2(1476, 412)
 [node name="House" parent="Ground" instance=ExtResource("14_elcbp")]
 position = Vector2(1327, 3300)
 rotation = -2.87979
-scale = Vector2(1, 1)
 metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation" parent="Ground" instance=ExtResource("13_jji5h")]
@@ -345,6 +344,8 @@ metadata/_edit_lock_ = true
 color = Color(0.347817, 0.347817, 0.347817, 1)
 blend_mode = 1
 
+[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
