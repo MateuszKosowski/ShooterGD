@@ -3,8 +3,21 @@ class_name LevelParent
 
 var laser_scane: PackedScene = preload("res://scenes/projectiles/laser.tscn")
 var grenade_scane: PackedScene = preload("res://scenes/projectiles/grenade.tscn")
-
-
+	
+var pos1: Vector2 = Vector2(1000,115)
+var pos2: Vector2 = Vector2(2120,115)
+const speed = 400
+	
+func _process(delta):
+	if pos1.x < 1365:
+		pos1.x += speed * delta
+		$Door.position = pos1
+	if pos2.x > 1755:
+		pos2.x -= speed * delta
+		$Door2.position = pos2
+	
+	
+	
 func _on_player_laser(pos, direction):
 	var laser = laser_scane.instantiate() as Area2D
 	laser.position = pos
