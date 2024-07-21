@@ -8,6 +8,7 @@
 radius = 115.0
 
 [node name="Toilet" instance=ExtResource("1_kv5eq")]
+collision_layer = 4
 script = ExtResource("2_wh2nn")
 
 [node name="Sprite2D" parent="." index="0"]

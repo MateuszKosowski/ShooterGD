@@ -254,4 +254,6 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(459, 1487)
 rotation = -2.87979
 
+[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

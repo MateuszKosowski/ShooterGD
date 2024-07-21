@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgu887gc4gnbo"]
+
+[ext_resource type="Script" path="res://scenes/houses/house.gd" id="1_vfgok"]
+[ext_resource type="PackedScene" uid="uid://d27w0u1rqx7xi" path="res://scenes/objects/simple_light.tscn" id="2_bw1sh"]
+[ext_resource type="TileSet" uid="uid://oppeo8x8e7k7" path="res://scenes/levels/house.tres" id="2_k033s"]
+[ext_resource type="PackedScene" uid="uid://b34sqkidgvfoi" path="res://scenes/objects/wall_light.tscn" id="3_h13a8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtk1d"]
+size = Vector2(4434, 2086)
+
+[node name="House" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_vfgok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(746, 390)
+shape = SubResource("RectangleShape2D_xtk1d")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(2, 0)
+tile_set = ExtResource("2_k033s")
+format = 2
+layer_0/name = "Floor"
+layer_0/tile_data = PackedInt32Array(-2, 65536, 1, -1, 65536, 1, -65536, 65536, 1, -65535, 65536, 1, -65534, 65536, 1, -65533, 65536, 1, 3, 65536, 1, 2, 65536, 1, 1, 65536, 1, 0, 65536, 1, 65535, 65536, 1, 65534, 65536, 1, 131070, 65536, 1, 131071, 65536, 1, 65536, 65536, 1, -3, 65536, 1, -65532, 65536, 1, -65531, 65536, 1, -65530, 65536, 1, 6, 65536, 1, 5, 65536, 1, 4, 65536, 1, 65542, 65536, 1, 131078, 65536, 1, 131077, 65536, 1, 65541, 65536, 1, 131076, 65536, 1, 131075, 65536, 1, 65539, 65536, 1, 65540, 65536, 1, 65538, 65536, 1, 131074, 65536, 1, 131073, 65536, 1, 65537, 65536, 1, 131072, 65536, 1, 196607, 65536, 1, 196606, 65536, 1, 131069, 65536, 1, 65533, 65536, 1, 196605, 65536, 1, 262141, 65536, 2, 262142, 65536, 2, 262143, 65536, 2, 196608, 65536, 2, 196609, 65536, 2, 196610, 65536, 2, 196611, 65536, 2, 196612, 65536, 2, 262140, 0, 2, 196604, 0, 1, 131068, 0, 1, 65532, 0, 1, -4, 0, 1, -65539, 65536, 0, -65538, 65536, 0, -65537, 65536, 0, -131072, 65536, 0, -131071, 65536, 0, -131070, 65536, 0, -131069, 65536, 0, -131068, 65536, 0, -131067, 65536, 0, -131066, 65536, 0, -65529, 131072, 1, 7, 131072, 1, 65543, 131072, 1, 131079, 131072, 1, -65540, 0, 0, -131065, 131072, 0, 196615, 131072, 2, 196613, 131072, 4, 196614, 131072, 4)
+layer_1/name = "Outer walls"
+layer_1/tile_data = PackedInt32Array(196615, 327680, 2, 131079, 327680, 1, 65543, 327680, 1, 7, 327680, 1, -65529, 327680, 1, -131065, 327680, 0, -65540, 196608, 0, 262140, 196608, 2, 262141, 262144, 2, 262142, 262144, 2, 262143, 262144, 2, 196608, 262144, 2, 196609, 262144, 2, 196610, 262144, 2, 196611, 262144, 2, 196612, 262144, 2, 196613, 393216, 3, 196614, 393216, 4, 196604, 196608, 1, 131068, 196608, 1, 65532, 196608, 1, -4, 196608, 1, -65539, 262144, 0, -65538, 262144, 0, -65537, 262144, 0, -131072, 262144, 0, -131071, 262144, 0, -131070, 262144, 0, -131069, 262144, 0, -131068, 262144, 0, -131067, 262144, 0, -131066, 262144, 0)
+layer_2/name = "Inner walls"
+layer_2/tile_data = PackedInt32Array(196612, 327680, 8, 131076, 65536, 6, 65540, 65536, 7, 65539, 0, 6, 65538, 196608, 6, 65537, 0, 6, 65536, 0, 6, 131070, 0, 6, 131069, 0, 6, 131068, 262144, 7, -131070, 327680, 6, 2, 65536, 6, 196610, 327680, 8)
+
+[node name="WallLight2" parent="." instance=ExtResource("3_h13a8")]
+position = Vector2(-1281, 29)
+rotation = -1.5708
+
+[node name="SimpleLight" parent="." instance=ExtResource("2_bw1sh")]
+position = Vector2(2849, 157)
+rotation = 1.5708
+
+[node name="WallLight" parent="." instance=ExtResource("3_h13a8")]
+position = Vector2(2311, -499)
+
+[node name="SimpleLight2" parent="." instance=ExtResource("2_bw1sh")]
+position = Vector2(570, -502)
+
+[node name="SimpleLight4" parent="." instance=ExtResource("2_bw1sh")]
+position = Vector2(128, 1288)
+rotation = -3.14159
+
+[node name="SimpleLight3" parent="." instance=ExtResource("2_bw1sh")]
+position = Vector2(1731, 970)
+rotation = 1.5708
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
