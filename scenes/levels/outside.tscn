@@ -242,7 +242,7 @@ position = Vector2(549, -593)
 metadata/_edit_lock_ = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
-color = Color(0.347817, 0.347817, 0.347817, 1)
+color = Color(0.34902, 0.34902, 0.34902, 0.223529)
 blend_mode = 1
 
 [node name="Toilet" parent="." index="5" instance=ExtResource("17_cpx4b")]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6tsrn07r6vya"]
 
-[ext_resource type="Texture2D" uid="uid://dfccfn2ritwma" path="res://graphics/objects/door.png" id="1_7rhbf"]
+[ext_resource type="Texture2D" uid="uid://icphd87xl24m" path="res://graphics/objects/door2.png" id="1_iams5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6myet"]
 size = Vector2(388, 20)
@@ -10,7 +10,7 @@ size = Vector2(388, 20)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture = ExtResource("1_7rhbf")
+texture = ExtResource("1_iams5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-1, 0)
