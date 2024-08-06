@@ -25,3 +25,8 @@ func _ready():
 	# Rotate the player after the level loads
 	var pos3: Vector2 = get_viewport().size
 	Input.warp_mouse(Vector2(pos3.x / 2, pos3.y - 100))
+	var tween = create_tween()
+	tween.tween_property($Player, "speed", 0, 0)
+	await get_tree().create_timer(0.8).timeout
+	var tween2 = create_tween()
+	tween2.tween_property($Player, "speed", 400, 0)
