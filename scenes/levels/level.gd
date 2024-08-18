@@ -13,6 +13,7 @@ func _on_player_laser(pos, direction):
 	laser.rotation_degrees = rad_to_deg(direction.angle()) + 90
 	laser.direction = direction
 	$Projectiles.add_child(laser)
+	$UI.update_laser_text()
 	
 # Create a granade
 func _on_player_grenade(pos, direction):
@@ -20,8 +21,13 @@ func _on_player_grenade(pos, direction):
 	grenade.position = pos
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
+	$UI.update_grenade_text()
 
 func _ready():
+	#Update UI
+	$UI.update_laser_text()
+	$UI.update_grenade_text()
+	
 	# Rotate the player after the level loads
 	var pos3: Vector2 = get_viewport().size
 	Input.warp_mouse(Vector2(pos3.x / 2, pos3.y - 100))
