@@ -2,7 +2,7 @@ extends Area2D
 
 var rotation_speed: int = 4
 var ava_options = ['laser', 'laser', 'laser', 'grenade', 'health']
-var type = ava_options[randi()%len(ava_options)]
+var type = 'health' #ava_options[randi()%len(ava_options)]
 
 func _ready():
 	

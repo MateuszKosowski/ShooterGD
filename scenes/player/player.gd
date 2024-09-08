@@ -51,11 +51,16 @@ func add_item(type: String) -> void:
 	if type == 'laser':
 		if Globals.laser_amount <= 30:
 			Globals.laser_amount += 20
-		if Globals.laser_amount > 30:
+		else:
 			Globals.laser_amount = 50
 		update_stats.emit()
 	if type == 'grenade':
 		if Globals.grenade_amount < 5:
 			Globals.grenade_amount += 1
 			update_stats.emit()
+	if type == 'health':
+		if Globals.health < 90:
+			Globals.health += 10
+		else:
+			Globals.health = 100
 
