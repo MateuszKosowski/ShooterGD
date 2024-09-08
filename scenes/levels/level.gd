@@ -36,3 +36,8 @@ func _ready():
 	await get_tree().create_timer(0.8).timeout
 	var tween2 = create_tween()
 	tween2.tween_property($Player, "speed", 400, 0)
+
+#Update player stats after getting some items
+func _on_player_update_stats():
+	$UI.update_laser_text()
+	$UI.update_grenade_text()

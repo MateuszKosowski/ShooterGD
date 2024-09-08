@@ -10,9 +10,15 @@ func update_laser_text():
 	if Globals.laser_amount == 0:
 		laser_label.modulate = red
 		$LaserCounter/VBoxContainer/MarginContainer/TextureRect.modulate = red
+	else:
+		laser_label.modulate = Color(1, 1, 1)
+		$LaserCounter/VBoxContainer/MarginContainer/TextureRect.modulate = Color(1, 1, 1)
 	
 func update_grenade_text():
 	grenade_label.text = str(Globals.grenade_amount) + "/5"
 	if Globals.grenade_amount == 0:
 		grenade_label.modulate = red
 		$GranadeCounter/VBoxContainer/MarginContainer/TextureRect.modulate = red
+	else:
+		grenade_label.modulate = Color(1, 1, 1)
+		$GranadeCounter/VBoxContainer/MarginContainer/TextureRect.modulate = Color(1, 1, 1)
