@@ -9,7 +9,7 @@ func _on_exit_gate_area_body_entered(_body):
 	# Wait 1s
 	await get_tree().create_timer(1).timeout
 	# Change of scene
-	get_tree().change_scene_to_file("res://scenes/levels/outside.tscn")
+	TransitionLayer.change_scene("res://scenes/levels/outside.tscn")
 	
 var doorPos1: Vector2 = Vector2(1000,200)
 var doorPos2: Vector2 = Vector2(2120,200)
