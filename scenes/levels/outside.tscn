@@ -238,6 +238,27 @@ metadata/_edit_lock_ = true
 [node name="LightFanAnimation" parent="Ground" index="45" instance=ExtResource("14_cdhov")]
 position = Vector2(-1072, 2468)
 
+[node name="Item" parent="Ground" index="46" instance=ExtResource("18_rcto5")]
+position = Vector2(156, 1419)
+
+[node name="Item2" parent="Ground" index="47" instance=ExtResource("18_rcto5")]
+position = Vector2(1920, 424)
+
+[node name="Item3" parent="Ground" index="48" instance=ExtResource("18_rcto5")]
+position = Vector2(2760, 1868)
+
+[node name="Item4" parent="Ground" index="49" instance=ExtResource("18_rcto5")]
+position = Vector2(-2259, 355)
+
+[node name="Item5" parent="Ground" index="50" instance=ExtResource("18_rcto5")]
+position = Vector2(-1694, 1996)
+
+[node name="Item6" parent="Ground" index="51" instance=ExtResource("18_rcto5")]
+position = Vector2(251, 2010)
+
+[node name="Item7" parent="Ground" index="52" instance=ExtResource("18_rcto5")]
+position = Vector2(1843, 3649)
+
 [node name="Gate" parent="." index="1" instance=ExtResource("15_lygj6")]
 position = Vector2(549, -593)
 metadata/_edit_lock_ = true
@@ -254,9 +275,6 @@ scale = Vector2(0.5, 0.5)
 [node name="Box" parent="." index="6" instance=ExtResource("18_v8y2x")]
 position = Vector2(459, 1487)
 rotation = -2.87979
-
-[node name="Item" parent="." index="8" instance=ExtResource("18_rcto5")]
-position = Vector2(252, 523)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]

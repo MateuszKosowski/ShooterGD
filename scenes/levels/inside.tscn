@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dvw2paj2cfvgr"]
+[gd_scene load_steps=18 format=3 uid="uid://dvw2paj2cfvgr"]
 
 [ext_resource type="PackedScene" uid="uid://clgcibnb5qxle" path="res://scenes/levels/level.tscn" id="1_g132c"]
 [ext_resource type="TileSet" uid="uid://oppeo8x8e7k7" path="res://scenes/levels/house.tres" id="2_1axdp"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b4hiywcvuxlvl" path="res://scenes/objects/bed.tscn" id="7_hpwwy"]
 [ext_resource type="Texture2D" uid="uid://bfs2wkxeaqynk" path="res://graphics/lights/overlays/hole.png" id="8_wklor"]
 [ext_resource type="Texture2D" uid="uid://fyb3pbokui1e" path="res://graphics/lights/textures/circle.png" id="10_glm6u"]
+[ext_resource type="PackedScene" uid="uid://qufrk0dq4b37" path="res://scenes/items/item.tscn" id="11_xmyds"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bwq46"]
 size = Vector2(727, 136)
@@ -129,6 +130,24 @@ layer_2/name = "Outer"
 layer_2/z_index = 2
 layer_2/tile_data = PackedInt32Array(0, 196608, 0, 65536, 196608, 1, 131072, 196608, 1, 196608, 196608, 1, 262144, 196608, 1, 1, 262144, 0, 2, 262144, 0, 3, 393216, 3, 4, 393216, 4, 5, 262144, 0, 6, 262144, 0, 7, 327680, 0, 65543, 327680, 1, 131079, 327680, 1, 196615, 327680, 1, 262151, 196608, 2, 262152, 262144, 0, 262153, 262144, 0, 262154, 262144, 0, 262155, 327680, 0, 327691, 327680, 1, 393227, 327680, 1, 458763, 327680, 2, 458762, 262144, 0, 458761, 262144, 0, 458758, 262144, 0, 458760, 262144, 0, 458759, 262144, 0, 458757, 262144, 0, 458756, 262144, 0, 458755, 262144, 0, 458754, 262144, 0, 458753, 262144, 0, 458752, 196608, 2, 393216, 327680, 1, 327680, 327680, 1)
 
+[node name="Item" parent="Ground" index="2" instance=ExtResource("11_xmyds")]
+position = Vector2(2501, 581)
+
+[node name="Item2" parent="Ground" index="3" instance=ExtResource("11_xmyds")]
+position = Vector2(2928, 1962)
+
+[node name="Item3" parent="Ground" index="4" instance=ExtResource("11_xmyds")]
+position = Vector2(590, 1372)
+
+[node name="Item4" parent="Ground" index="5" instance=ExtResource("11_xmyds")]
+position = Vector2(986, 2548)
+
+[node name="Item5" parent="Ground" index="6" instance=ExtResource("11_xmyds")]
+position = Vector2(4126, 2623)
+
+[node name="Item6" parent="Ground" index="7" instance=ExtResource("11_xmyds")]
+position = Vector2(4119, 2445)
+
 [node name="Player" parent="." index="3"]
 position = Vector2(1563, 650)
 
@@ -142,6 +161,7 @@ texture_scale = 1.5
 metadata/_edit_lock_ = true
 
 [node name="Lights" type="Node2D" parent="." index="4"]
+metadata/_edit_lock_ = true
 
 [node name="Lattice2" type="Sprite2D" parent="Lights" index="0"]
 modulate = Color(1, 1, 1, 0.239216)
@@ -189,6 +209,7 @@ modulate = Color(1, 0.133333, 0.109804, 0.117647)
 position = Vector2(1559, 1180)
 scale = Vector2(3, 3)
 texture = ExtResource("8_wklor")
+metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation4" parent="Lights" index="9" instance=ExtResource("5_jwgy4")]
 position = Vector2(2912, 2531)
@@ -197,6 +218,7 @@ scale = Vector2(0.7, 0.7)
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="5"]
 color = Color(1, 1, 0.223529, 0.345098)
 blend_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="ExitGateArea" type="Area2D" parent="." index="6"]
 position = Vector2(1563, 208)
