@@ -83,24 +83,31 @@ z_index = 1
 position = Vector2(2549, 2046)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
+collision_mask = 1
 
 [node name="Crate" parent="Decorations" index="11" instance=ExtResource("6_x05g0")]
 z_index = 1
 position = Vector2(2234, 972)
 rotation = 4.71238
 scale = Vector2(0.7, 0.7)
+collision_layer = 1
+collision_mask = 1
 
 [node name="Crate2" parent="Decorations" index="12" instance=ExtResource("6_x05g0")]
 z_index = 1
 position = Vector2(2800, 2224)
 rotation = 6.28318
 scale = Vector2(0.7, 0.7)
+collision_layer = 1
+collision_mask = 1
 
 [node name="Crate3" parent="Decorations" index="13" instance=ExtResource("6_x05g0")]
 z_index = 1
 position = Vector2(1549, 2788)
 rotation = 3.14159
 scale = Vector2(0.7, 0.7)
+collision_layer = 1
+collision_mask = 1
 
 [node name="Bed" parent="Decorations" index="14" instance=ExtResource("7_hpwwy")]
 z_index = 1
@@ -112,6 +119,7 @@ scale = Vector2(0.7, 0.7)
 z_index = 1
 position = Vector2(4220, 1913)
 scale = Vector2(0.7, 0.7)
+collision_mask = 1
 
 [node name="Outside" type="TileMap" parent="Ground" index="0"]
 tile_set = ExtResource("2_b7kc3")

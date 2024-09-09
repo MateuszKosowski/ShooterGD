@@ -12,6 +12,8 @@ script = ExtResource("1_7rvds")
 [node name="Projectiles" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
+[node name="Items" type="Node2D" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("4_5vvfq")]
 position = Vector2(562, 573)
 
