@@ -9,7 +9,6 @@
 radius = 115.0
 
 [node name="Toilet" instance=ExtResource("1_kv5eq")]
-collision_layer = 4
 script = ExtResource("2_wh2nn")
 
 [node name="BaseSprite" parent="." index="0"]
@@ -20,3 +19,5 @@ texture = ExtResource("4_xkslr")
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CircleShape2D_6g6k5")
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPositions" index="0"]
