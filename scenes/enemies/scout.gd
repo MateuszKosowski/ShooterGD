@@ -6,6 +6,9 @@ var one_gun_use: bool = true
 
 signal laser(pos, direction)
 
+func hit():
+	print("Scout was hit")
+
 func _process(_delta):
 	if player_nearby:
 		look_at(Globals.player_pos)
@@ -23,7 +26,6 @@ func _on_attack_area_body_entered(_body):
 
 func _on_attack_area_body_exited(_body):
 	player_nearby = false
-
 
 func _on_laser_cooldown_timeout():
 	can_laser = true

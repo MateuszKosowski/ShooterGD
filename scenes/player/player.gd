@@ -65,3 +65,5 @@ func add_item(type: String) -> void:
 		else:
 			Globals.health = 100
 
+func hit():
+	print("Player was hit") 
