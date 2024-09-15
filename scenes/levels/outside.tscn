@@ -289,7 +289,6 @@ texture = ExtResource("4_rbxjv")
 [node name="Blood4" type="Sprite2D" parent="Ground" index="59"]
 position = Vector2(-2503, 2038)
 rotation = -0.565214
-scale = Vector2(1, 1)
 texture = ExtResource("3_3xsxh")
 
 [node name="Blood3" type="Sprite2D" parent="Ground" index="60"]
@@ -315,25 +314,21 @@ collision_mask = 1
 [node name="Crate3" parent="Stuff" index="1" instance=ExtResource("18_v8y2x")]
 position = Vector2(-2500, 663)
 rotation = -1.54243
-scale = Vector2(1, 1)
 collision_mask = 1
 
 [node name="Crate4" parent="Stuff" index="2" instance=ExtResource("18_v8y2x")]
 position = Vector2(784, 2676)
 rotation = 0.261799
-scale = Vector2(1, 1)
 collision_mask = 1
 
 [node name="Crate" parent="Stuff" index="3" instance=ExtResource("18_v8y2x")]
 position = Vector2(459, 1487)
 rotation = -2.87979
-scale = Vector2(1, 1)
 collision_mask = 1
 
 [node name="Crate2" parent="Stuff" index="4" instance=ExtResource("18_v8y2x")]
 position = Vector2(2858, 187)
 rotation = 0.523605
-scale = Vector2(1, 1)
 collision_mask = 1
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="5"]
@@ -342,6 +337,9 @@ blend_mode = 1
 
 [node name="Scout" parent="Enemis" index="0" instance=ExtResource("19_78tyi")]
 position = Vector2(681, 1030)
+
+[node name="Scout2" parent="Enemis" index="1" instance=ExtResource("19_78tyi")]
+position = Vector2(951, 871)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
