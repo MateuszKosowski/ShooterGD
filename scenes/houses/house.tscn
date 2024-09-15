@@ -83,5 +83,11 @@ modulate = Color(1, 1, 1, 0.352941)
 position = Vector2(2149, 968)
 texture = ExtResource("9_106lq")
 
+[node name="Lattice3" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.352941)
+position = Vector2(899, 973)
+rotation = 1.57576
+texture = ExtResource("9_106lq")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
