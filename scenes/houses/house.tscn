@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgu887gc4gnbo"]
+[gd_scene load_steps=11 format=3 uid="uid://dgu887gc4gnbo"]
 
 [ext_resource type="Script" path="res://scenes/houses/house.gd" id="1_vfgok"]
 [ext_resource type="PackedScene" uid="uid://d27w0u1rqx7xi" path="res://scenes/objects/simple_light.tscn" id="2_bw1sh"]
 [ext_resource type="TileSet" uid="uid://oppeo8x8e7k7" path="res://scenes/levels/house.tres" id="2_k033s"]
 [ext_resource type="PackedScene" uid="uid://b34sqkidgvfoi" path="res://scenes/objects/wall_light.tscn" id="3_h13a8"]
+[ext_resource type="Texture2D" uid="uid://dcm0b382cp8m" path="res://graphics/decals/ceiling_hole1.png" id="5_f4r2v"]
+[ext_resource type="Texture2D" uid="uid://bcq0fc4lfy1aq" path="res://graphics/decals/blood.png" id="6_apwdy"]
+[ext_resource type="PackedScene" uid="uid://b4hiywcvuxlvl" path="res://scenes/objects/bed.tscn" id="7_r6q7i"]
+[ext_resource type="Texture2D" uid="uid://bfs2wkxeaqynk" path="res://graphics/lights/overlays/hole.png" id="8_omw2w"]
+[ext_resource type="Texture2D" uid="uid://bg0x78m5utnfh" path="res://graphics/lights/overlays/lattice.png" id="9_106lq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtk1d"]
 size = Vector2(4434, 2086)
@@ -48,6 +53,35 @@ rotation = -3.14159
 [node name="SimpleLight3" parent="." instance=ExtResource("2_bw1sh")]
 position = Vector2(1731, 970)
 rotation = 1.5708
+
+[node name="CeilingHole1" type="Sprite2D" parent="."]
+position = Vector2(1386, 183)
+rotation = 3.1341
+texture = ExtResource("5_f4r2v")
+
+[node name="Blood" type="Sprite2D" parent="."]
+position = Vector2(-683, -97)
+texture = ExtResource("6_apwdy")
+
+[node name="Bed" parent="." instance=ExtResource("7_r6q7i")]
+position = Vector2(-924, 976)
+rotation = -3.13952
+
+[node name="Hole" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 0.192157)
+position = Vector2(146, 95)
+scale = Vector2(4, 4)
+texture = ExtResource("8_omw2w")
+
+[node name="Lattice2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.352941)
+position = Vector2(2532, 970)
+texture = ExtResource("9_106lq")
+
+[node name="Lattice" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.352941)
+position = Vector2(2149, 968)
+texture = ExtResource("9_106lq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

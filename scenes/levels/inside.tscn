@@ -156,18 +156,6 @@ position = Vector2(4126, 2623)
 [node name="Item6" parent="Ground" index="7" instance=ExtResource("11_xmyds")]
 position = Vector2(4119, 2445)
 
-[node name="Player" parent="." index="3"]
-position = Vector2(1563, 650)
-
-[node name="Camera2D" parent="Player" index="7"]
-metadata/_edit_lock_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="Player" index="8"]
-energy = 1.5
-texture = ExtResource("10_glm6u")
-texture_scale = 1.5
-metadata/_edit_lock_ = true
-
 [node name="Lights" type="Node2D" parent="." index="4"]
 metadata/_edit_lock_ = true
 
@@ -234,5 +222,17 @@ position = Vector2(1563, 208)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0"]
 position = Vector2(-1, 99)
 shape = SubResource("RectangleShape2D_bwq46")
+
+[node name="Player" parent="." index="7"]
+position = Vector2(1563, 650)
+
+[node name="Camera2D" parent="Player" index="7"]
+metadata/_edit_lock_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Player" index="8"]
+energy = 1.5
+texture = ExtResource("10_glm6u")
+texture_scale = 1.5
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]
