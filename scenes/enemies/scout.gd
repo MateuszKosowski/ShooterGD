@@ -13,6 +13,12 @@ func hit():
 		health -= 20
 		can_get_hit = false
 		$Timers/HitTImer.start()
+		
+		# Shader in Godot is shared by all instances that use the same material
+		# To solve this problem, you need to make sure that each enemy instance has its own unique copy of the material
+		$Sprite2D.material = $Sprite2D.material.duplicate()
+		$Sprite2D.material.set_shader_parameter("progress", 1)
+		
 		if health <= 0:
 			queue_free()
 
@@ -36,6 +42,7 @@ func _on_attack_area_body_exited(_body):
 
 func _on_hit_timer_timeout():
 	can_get_hit = true
+	$Sprite2D.material.set_shader_parameter("progress", 0)
 
 func _on_laser_timer_timeout():
 	can_laser = true
