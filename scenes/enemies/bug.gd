@@ -14,6 +14,7 @@ func _process(_delta):
 
 func _on_attack_area_body_entered(_body):
 	player_near = true
+	$AnimatedSprite2D.play("attack")
 
 
 func _on_attack_area_body_exited(_body):
@@ -27,3 +28,8 @@ func _on_notice_area_body_entered(_body):
 func _on_notice_area_body_exited(_body):
 	active = false
 	$AnimatedSprite2D.stop()
+
+
+func _on_animated_sprite_2d_animation_finished():
+	if player_near:
+		Globals.health -= 10
