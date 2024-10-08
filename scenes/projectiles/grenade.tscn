@@ -151,6 +151,7 @@ linear_damp = 1.6
 script = ExtResource("1_q1gsd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_rgr2s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

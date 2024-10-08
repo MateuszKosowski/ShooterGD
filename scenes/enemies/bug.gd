@@ -4,6 +4,7 @@ var active: bool = false
 var speed: int = 250
 var vulnerable: bool = true
 var player_near: bool = false
+var health: int = 30
 
 func _process(_delta):
 	var direction = (Globals.player_pos - position).normalized()
@@ -33,3 +34,19 @@ func _on_notice_area_body_exited(_body):
 func _on_animated_sprite_2d_animation_finished():
 	if player_near:
 		Globals.health -= 10
+		$Timer/AttackTimer.start()
+
+
+func _on_attack_timer_timeout():
+	$AnimatedSprite2D.play("attack")
+
+func hit():
+	if vulnerable:
+		vulnerable = false
+		$Timer/HitTimer.start()
+		health -= 10
+	if health <= 0:
+		queue_free()
+
+func _on_hit_timer_timeout():
+	vulnerable = true
