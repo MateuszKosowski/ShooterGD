@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bmdp1mxkr284k"]
+[gd_scene load_steps=22 format=3 uid="uid://bmdp1mxkr284k"]
 
 [ext_resource type="PackedScene" uid="uid://clgcibnb5qxle" path="res://scenes/levels/level.tscn" id="1_yi20n"]
 [ext_resource type="Texture2D" uid="uid://dbs8d2wpl73wu" path="res://graphics/ground/stones.png" id="2_d4sbo"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://ptqicml2ay3x" path="res://scenes/container/crate.tscn" id="18_v8y2x"]
 [ext_resource type="PackedScene" uid="uid://b858sdmb75g0x" path="res://scenes/enemies/scout.tscn" id="19_78tyi"]
 [ext_resource type="PackedScene" uid="uid://bafupsn7nicfm" path="res://scenes/enemies/bug.tscn" id="20_5toub"]
+[ext_resource type="PackedScene" uid="uid://7jtrhgxipgq6" path="res://scenes/enemies/drone.tscn" id="21_pmlwg"]
 
 [node name="Outside" instance=ExtResource("1_yi20n")]
 script = ExtResource("2_p7tu2")
@@ -337,13 +338,16 @@ color = Color(0.34902, 0.34902, 0.34902, 0.223529)
 blend_mode = 1
 
 [node name="Scout" parent="Enemis" index="0" instance=ExtResource("19_78tyi")]
-position = Vector2(1753, 1442)
+position = Vector2(2044, 1619)
 
 [node name="Scout2" parent="Enemis" index="1" instance=ExtResource("19_78tyi")]
-position = Vector2(2148, 278)
+position = Vector2(2418, 332)
 
 [node name="Bug" parent="Enemis" index="2" instance=ExtResource("20_5toub")]
-position = Vector2(664, 883)
+position = Vector2(-1409, 1263)
+
+[node name="Drone" parent="Enemis" index="3" instance=ExtResource("21_pmlwg")]
+position = Vector2(1004, 1038)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
