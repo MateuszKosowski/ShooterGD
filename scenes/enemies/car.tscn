@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://es0j6148glnk" path="res://graphics/explosions/gun.png" id="4_6x5gm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6htd8"]
-radius = 754.003
+radius = 612.04
 
 [sub_resource type="Animation" id="Animation_xeqai"]
 resource_name = "laser_load"
@@ -85,20 +85,20 @@ texture = ExtResource("3_nb6ud")
 
 [node name="RayCast2D" type="RayCast2D" parent="Turret"]
 position = Vector2(109, -26)
-target_position = Vector2(640, 0)
+target_position = Vector2(500, 0)
 
 [node name="Line2D" type="Line2D" parent="Turret/RayCast2D"]
-points = PackedVector2Array(0, 0, 639, 0)
+points = PackedVector2Array(0, 0, 497, 1)
 width = 0.0
 default_color = Color(0.627451, 0, 0.262745, 0.827451)
 
 [node name="RayCast2D2" type="RayCast2D" parent="Turret"]
 position = Vector2(108, 31)
-target_position = Vector2(640, 0)
+target_position = Vector2(500, 0)
 
 [node name="Line2D" type="Line2D" parent="Turret/RayCast2D2"]
 position = Vector2(1, 58)
-points = PackedVector2Array(-1, -58, 638, -58)
+points = PackedVector2Array(-1, -58, 498, -58)
 width = 0.0
 default_color = Color(0.627451, 0, 0.262745, 0.827451)
 
