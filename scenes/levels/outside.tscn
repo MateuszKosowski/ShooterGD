@@ -347,7 +347,7 @@ position = Vector2(2418, 332)
 position = Vector2(-1409, 1263)
 
 [node name="Drone" parent="Enemis" index="3" instance=ExtResource("21_pmlwg")]
-position = Vector2(1004, 1038)
+position = Vector2(-753, 1962)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]

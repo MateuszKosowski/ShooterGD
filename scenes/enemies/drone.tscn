@@ -1,14 +1,35 @@
-[gd_scene load_steps=9 format=3 uid="uid://7jtrhgxipgq6"]
+[gd_scene load_steps=11 format=3 uid="uid://7jtrhgxipgq6"]
 
 [ext_resource type="Script" path="res://scenes/enemies/drone.gd" id="1_1jvqd"]
 [ext_resource type="Texture2D" uid="uid://v4nqp24ou3i4" path="res://graphics/enemies/drone.png" id="1_bl5xa"]
+[ext_resource type="Shader" path="res://scenes/enemies/drone.gdshader" id="1_v1orw"]
 [ext_resource type="Texture2D" uid="uid://56ts7s8tj64e" path="res://graphics/explosions/explosion_3.png" id="3_vsytm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h4sua"]
+shader = ExtResource("1_v1orw")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4al4a"]
 radius = 80.0812
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hq8p4"]
 radius = 1028.16
+
+[sub_resource type="Animation" id="Animation_ihi1o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
+}
 
 [sub_resource type="Animation" id="Animation_kykfp"]
 resource_name = "explosion"
@@ -64,20 +85,19 @@ tracks/3/keys = {
 "method": &"queue_free"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_ihi1o"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Explosion:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [20]
+"values": [{
+"args": [],
+"method": &"stop_move"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wjycq"]
@@ -92,7 +112,7 @@ collision_mask = 15
 script = ExtResource("1_1jvqd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
+material = SubResource("ShaderMaterial_h4sua")
 position = Vector2(0, -3)
 rotation = 1.5708
 texture = ExtResource("1_bl5xa")
@@ -101,6 +121,7 @@ texture = ExtResource("1_bl5xa")
 shape = SubResource("CircleShape2D_4al4a")
 
 [node name="NoticeArea" type="Area2D" parent="."]
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
 shape = SubResource("CircleShape2D_hq8p4")
