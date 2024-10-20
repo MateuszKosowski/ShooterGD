@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cir437ieembff"]
+
+[ext_resource type="Texture2D" uid="uid://t27x18814b2b" path="res://graphics/car/main.png" id="1_6gq5i"]
+[ext_resource type="Script" path="res://scenes/enemies/car.gd" id="1_8u7l0"]
+
+[node name="Car" type="PathFollow2D"]
+script = ExtResource("1_8u7l0")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+polygon = PackedVector2Array(1, -131, 31, -125, 49, -122, 61, -127, 62, -151, 67, -168, 87, -171, 136, -174, 164, -168, 202, -161, 226, -125, 243, -90, 244, 26, 244, 90, 203, 159, 190, 160, 151, 169, 91, 169, 64, 165, 1, 129, -40, 171, -76, 180, -130, 180, -170, 173, -177, 136, -170, 80, -238, 34, -240, -31, -233, -42, -213, -52, -171, -80, -169, -111, -175, -145, -170, -171, -109, -182, -43, -170)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(57, 0)
+rotation = 1.5708
+texture = ExtResource("1_6gq5i")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bmdp1mxkr284k"]
+[gd_scene load_steps=24 format=3 uid="uid://bmdp1mxkr284k"]
 
 [ext_resource type="PackedScene" uid="uid://clgcibnb5qxle" path="res://scenes/levels/level.tscn" id="1_yi20n"]
 [ext_resource type="Texture2D" uid="uid://dbs8d2wpl73wu" path="res://graphics/ground/stones.png" id="2_d4sbo"]
@@ -21,8 +21,13 @@
 [ext_resource type="PackedScene" uid="uid://b858sdmb75g0x" path="res://scenes/enemies/scout.tscn" id="19_78tyi"]
 [ext_resource type="PackedScene" uid="uid://bafupsn7nicfm" path="res://scenes/enemies/bug.tscn" id="20_5toub"]
 [ext_resource type="PackedScene" uid="uid://7jtrhgxipgq6" path="res://scenes/enemies/drone.tscn" id="21_pmlwg"]
+[ext_resource type="PackedScene" uid="uid://cir437ieembff" path="res://scenes/enemies/car.tscn" id="22_36pi7"]
 
 [sub_resource type="Curve2D" id="Curve2D_yi1cm"]
+_data = {
+"points": PackedVector2Array(-85.5263, -226.288, 85.5263, 226.288, -1313, -252, -315.72, -243.676, 315.72, 243.676, -1180, 516, -74.1624, 57.211, 74.1624, -57.211, -590, 468, -154.682, -33.9028, 154.682, 33.9028, 172, 444, -78.4003, -61.4489, 78.4003, 61.4489, 703, 941, -148.325, -76.2813, 148.325, 76.2813, 1158, 1332, -105.946, 57.211, 105.946, -57.211, 1707, 1134, -154.682, 177.99, 154.682, -177.99, 1923, 689, -152.563, 6.35678, 152.563, -6.35678, 2250, 494, -131.373, -91.1138, 131.373, 91.1138, 2699, 638, -42.3785, -144.087, 42.3785, 144.087, 2923, 1214, 80.5192, -99.5895, -80.5192, 99.5895, 2915, 1651, 167.395, -42.3785, -167.395, 42.3785, 2508, 1807, 169.514, 33.9028, -169.514, -33.9028, 1559, 1689, 173.752, 63.5678, -173.752, -63.5678, 1215, 1465, 161.038, 99.5895, -161.038, -99.5895, 862, 1148, 158.821, 4.49492, -158.821, -4.49492, -878, 926, 68.9221, -20.9763, -68.9221, 20.9763, -1234, 981, 105.452, -88.0994, -105.452, 88.0994, -1594, 1244, 0, 0, 0, 0, -1823, 1701, 84, -44, -84, 44, -2026, 2002, 0, 0, 0, 0, -2302, 1947, 40, 76, -40, -76, -2522, 1744, -18, 88, 18, -88, -2509, 1358, -96, 126, 96, -126, -2090, 896, -9.52441, 98.4189, 9.52441, -98.4189, -2086, 180, 0, 0, 0, 0, -2264, -197, 9.52441, 79.37, -9.52441, -79.37, -2471, -557, -20.6362, 49.2094, 20.6362, -49.2094, -2387, -901, -77.7818, 22.6274, 77.7818, -22.6274, -2166, -1032, -96.2171, -119.38, 96.2171, 119.38, -1536, -720, 0, 0, 0, 0, -1313, -252)
+}
+point_count = 32
 
 [node name="Outside" instance=ExtResource("1_yi20n")]
 script = ExtResource("2_p7tu2")
@@ -365,7 +370,7 @@ collision_mask = 1
 position = Vector2(156, 1419)
 
 [node name="Item2" parent="Items" index="1" instance=ExtResource("18_rcto5")]
-position = Vector2(1920, 424)
+position = Vector2(1863, 331)
 
 [node name="Item3" parent="Items" index="2" instance=ExtResource("18_rcto5")]
 position = Vector2(2760, 1868)
@@ -387,7 +392,7 @@ color = Color(0.34902, 0.34902, 0.34902, 0.223529)
 blend_mode = 1
 
 [node name="Scout" parent="Enemis" index="0" instance=ExtResource("19_78tyi")]
-position = Vector2(2125, 1720)
+position = Vector2(1735, 2436)
 
 [node name="Bug" parent="Enemis" index="1" instance=ExtResource("20_5toub")]
 position = Vector2(-2363, 189)
@@ -396,8 +401,13 @@ position = Vector2(-2363, 189)
 position = Vector2(-431, 3042)
 metadata/_edit_lock_ = true
 
-[node name="Path2D" type="Path2D" parent="." index="9"]
+[node name="CarPath" type="Path2D" parent="." index="9"]
 curve = SubResource("Curve2D_yi1cm")
+
+[node name="Car" parent="CarPath" index="0" instance=ExtResource("22_36pi7")]
+position = Vector2(-1308.44, -238.827)
+rotation = 1.26527
+progress = 13.9419
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
