@@ -3,6 +3,8 @@ extends CharacterBody2D
 var active: bool = false
 var speed: int = 200
 var player_near: bool = false
+var vulnerable: bool = true
+var hp: int = 100
 
 func _ready():
 	$NavigationAgent2D.path_desired_distance = 4.0
@@ -24,7 +26,7 @@ func _on_notice_area_body_entered(_body):
 
 func _on_notice_area_body_exited(_body):
 	active = false
-	$AnimationPlayer.stop("walk")
+	$AnimationPlayer.stop()
 
 func _on_nav_timer_timeout():
 	if active:
@@ -36,7 +38,20 @@ func _on_attack_area_body_entered(_body):
 
 func _on_attack_area_body_exited(_body):
 	player_near = false
+	$AnimationPlayer.stop()
+	$AnimationPlayer.play("walk")
 	
 func attack():
 	if player_near:
 		Globals.health -= 20
+
+func hit():
+	if vulnerable:
+		hp -= 20
+		$Timers/HitTimer.start()
+	if hp <= 0:
+		queue_free()
+
+
+func _on_hit_timer_timeout():
+	vulnerable = true
