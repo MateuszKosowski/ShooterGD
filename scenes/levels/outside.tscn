@@ -504,10 +504,7 @@ position = Vector2(-431, 3042)
 metadata/_edit_lock_ = true
 
 [node name="Hunter" parent="Enemis" index="3" instance=ExtResource("22_kt5yi")]
-position = Vector2(4162, -935)
-
-[node name="Hunter2" parent="Enemis" index="4" instance=ExtResource("22_kt5yi")]
-position = Vector2(4869, 1034)
+position = Vector2(4846, 1058)
 
 [node name="CarPath" type="Path2D" parent="." index="9"]
 curve = SubResource("Curve2D_yi1cm")
