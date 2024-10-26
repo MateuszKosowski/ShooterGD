@@ -33,4 +33,7 @@ func _process(delta):
 # When some body(player) collide with item add stats to him and delete item
 func _on_body_entered(body):
 	body.add_item(type)
+	$AudioStreamPlayer2D.play()
+	$Sprite2D.hide()
+	await $AudioStreamPlayer2D.finished
 	queue_free()

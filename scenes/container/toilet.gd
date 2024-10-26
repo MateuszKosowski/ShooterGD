@@ -5,6 +5,8 @@ func hit():
 		# Hide lid after hit
 		$LidSprite.hide()
 		
+		$AudioStreamPlayer2D.play()
+		
 		#Get random Mark2D as a spawnpoint for item
 		var pos = $SpawnPositions/Marker2D.global_position
 	

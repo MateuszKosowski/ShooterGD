@@ -18,6 +18,7 @@ func hit():
 		# To solve this problem, you need to make sure that each enemy instance has its own unique copy of the material
 		$Sprite2D.material = $Sprite2D.material.duplicate()
 		$Sprite2D.material.set_shader_parameter("progress", 1)
+		$AudioStreamPlayer2D.play()
 		
 		if health <= 0:
 			queue_free()

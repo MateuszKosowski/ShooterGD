@@ -37,6 +37,7 @@ func hit():
 		vulnerable = false
 		$HitTimer.start()
 		$Sprite2D.material.set_shader_parameter("progress", 1)
+		$Sounds/HitSound.play()
 	if health <= 0:
 		$AnimationPlayer.play("explosion")
 		explosion_active = true

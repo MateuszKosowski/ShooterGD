@@ -90,7 +90,6 @@ z_index = 1
 position = Vector2(2234, 972)
 rotation = 4.71238
 scale = Vector2(0.7, 0.7)
-collision_layer = 1
 collision_mask = 1
 
 [node name="Crate2" parent="Decorations" index="12" instance=ExtResource("6_x05g0")]

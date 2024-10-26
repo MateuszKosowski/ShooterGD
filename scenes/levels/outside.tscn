@@ -501,7 +501,6 @@ position = Vector2(-2363, 189)
 
 [node name="Drone" parent="Enemis" index="2" instance=ExtResource("21_pmlwg")]
 position = Vector2(-431, 3042)
-metadata/_edit_lock_ = true
 
 [node name="Hunter" parent="Enemis" index="3" instance=ExtResource("22_kt5yi")]
 position = Vector2(4846, 1058)
