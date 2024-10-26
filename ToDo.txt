@@ -1,0 +1,6 @@
+Things I want to add in the future
+1. Game menu
+2. Game ends when player dies
+3. Some shaders
+4. More enemis
+5. Cutscenes
