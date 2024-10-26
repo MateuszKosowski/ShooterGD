@@ -5,6 +5,7 @@ var direction: Vector2 = Vector2.UP
 
 func _ready():
 		$SelfDestroy.start()
+		$AudioStreamPlayer2D.play()
 
 func _process(delta):
 	position += direction * speed * delta
